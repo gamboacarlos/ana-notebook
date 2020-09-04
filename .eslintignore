@@ -1,0 +1,13 @@
+*
+!*/
+!*.js
+!*.jsx
+!*.ts
+!*.json
+node_modules
+dist
+umd
+public
+.cache
+package.json
+package-lock.json
