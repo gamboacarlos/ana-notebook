@@ -36,29 +36,26 @@ const App = () => {
   return (
     <>
     <h1 className="main-title">Ana's Notebook</h1>
-      <div className="container">
-        <div className="row">
-          <div className="one-half column">
-          <Formulario 
-          crearNota={crearNota}
+
+        <div className="grid ">
+          <div className="col-1-2">
+            <Formulario 
+            crearNota={crearNota}
           /> 
           </div>
-          <div className="one-half column">
-          {
-            listaNotas.map((lista) => (
-              <Notas 
-              {...lista}
-              eliminar={eliminar}
-              key={lista.id}           
-              />
-            ))
-          }
+          <div className="col-1-2">
+            {
+              listaNotas.map((lista) => (
+                <Notas 
+                {...lista}
+                eliminar={eliminar}
+                key={lista.id}           
+                />
+              ))
+            }
           </div>
         </div>
-      </div>
-      {/* <div className="row">
-      <footer><p>Hecho con <span>❤</span> para la mujer mas hermosa del mundo.</p></footer>
-      </div> */}
+            <footer><p>Hecho con <span>❤</span> para la mujer mas hermosa del mundo.</p></footer>
     </>
   )
 }
