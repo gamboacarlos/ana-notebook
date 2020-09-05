@@ -1,21 +1,29 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
-const Citas = ({ titulo, fecha, texto }) => {
-    return (
-        <div className="note" >
-            <p>Titulo<span>{titulo}</span></p>
-            <p>{fecha}</p>
-            <p>Texto<span>{texto}</span></p>
-            <button type="button" >X</button>
+const Notas = ({ id, titulo, fecha, texto, eliminar }) => {
+  return (
+    <div className="list">
+      <div className="note">
+        <button type="button" onClick={() => eliminar(id)}>
+          X
+        </button>
+        <h3>{titulo}</h3>
+        <p>
+          <span>{texto}</span>
+        </p>
+        <div className="bottom-note">
+          <span>{fecha}</span>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-Citas.propTypes = {
-    titulo: PropTypes.string,
-    fecha: PropTypes.number,
-    texto: PropTypes.string
-}
+Notas.propTypes = {
+  titulo: PropTypes.string,
+  fecha: PropTypes.number,
+  texto: PropTypes.string,
+};
 
-export default Citas
+export default Notas;
